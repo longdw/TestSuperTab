@@ -5,24 +5,13 @@
 </ion-header>
 
 <ion-content>
-  <ion-refresher (ionRefresh)="doRefresh($event)">
-      <ion-refresher-content
-          pullingIcon="arrow-dropdown"
-          pullingText="pulling to refresh"
-          refreshingSpinner="circles"
-          refreshingText="loading...">
-      </ion-refresher-content>
-  </ion-refresher>
-
-  <ion-card tappable *ngFor="let item of datas;let i = index;" (click)="itemClick(item)">
-      <ion-card-content class="list-style">
-          <div class="main-title">
-              {{item.title}}
-          </div>
-      </ion-card-content>
-  </ion-card>
-  
-  <ion-infinite-scroll (ionInfinite)="doMore($event)">
-      <ion-infinite-scroll-content loadingSpinner="circles" loadingText="loading..."></ion-infinite-scroll-content>
-  </ion-infinite-scroll>
+    <super-tabs scrollTabs>
+        <super-tab [root]="page" title="First page"></super-tab>
+        <super-tab [root]="page" title="Second page"></super-tab>
+        <super-tab [root]="page" title="Third page"></super-tab>
+        <super-tab [root]="page" title="Fourth page"></super-tab>
+        <super-tab [root]="page" title="Fifth page"></super-tab>
+        <super-tab [root]="page" title="Sixth page"></super-tab>
+        <super-tab [root]="page" title="Seventh page"></super-tab>
+    </super-tabs>
 </ion-content>

@@ -7,19 +7,29 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 
+import { SuperTabsModule } from 'ionic2-super-tabs';
+import { HomeChildPage } from "../pages/home/home-child";
+import { DetailPage } from "../pages/home/detail";
+
+
 @NgModule({
   declarations: [
     MyApp,
-    HomePage
+    HomePage,
+    HomeChildPage,
+    DetailPage
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    SuperTabsModule.forRoot()
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage
+    HomePage,
+    HomeChildPage,
+    DetailPage
   ],
   providers: [
     StatusBar,
