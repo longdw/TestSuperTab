@@ -5,13 +5,13 @@
 </ion-header>
 
 <ion-content>
-    <super-tabs scrollTabs>
-        <super-tab [root]="page" title="First page"></super-tab>
-        <super-tab [root]="page" title="Second page"></super-tab>
+    <super-tabs scrollTabs *ngIf="isLoaded">
+        <super-tab *ngFor="let item of datas" [root]="page" [title]="item.title" [rootParams]="getParams()"></super-tab>
+        <!-- <super-tab [root]="page" title="Second page"></super-tab>
         <super-tab [root]="page" title="Third page"></super-tab>
         <super-tab [root]="page" title="Fourth page"></super-tab>
         <super-tab [root]="page" title="Fifth page"></super-tab>
         <super-tab [root]="page" title="Sixth page"></super-tab>
-        <super-tab [root]="page" title="Seventh page"></super-tab>
+        <super-tab [root]="page" title="Seventh page"></super-tab> -->
     </super-tabs>
 </ion-content>
